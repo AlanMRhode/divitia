@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Net income:</strong>
+  <%= @budget.Net_Income %>
+</p>
+
+<p>
+  <strong>Net expense:</strong>
+  <%= @budget.Net_Expense %>
+</p>
+
+<p>
+  <strong>Income:</strong>
+  <%= @budget.income %>
+</p>
+
+<p>
+  <strong>Expense:</strong>
+  <%= @budget.expense %>
+</p>
+
+<%= link_to 'Edit', edit_budget_path(@budget) %> |
+<%= link_to 'Back', budgets_path %>

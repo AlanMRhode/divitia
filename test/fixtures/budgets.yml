@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Net_Income: 9.99
+  Net_Expense: 9.99
+  income_id: 
+  expense_id: 
+
+two:
+  Net_Income: 9.99
+  Net_Expense: 9.99
+  income_id: 
+  expense_id: 

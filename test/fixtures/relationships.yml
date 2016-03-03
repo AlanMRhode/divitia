@@ -1,0 +1,16 @@
+one:
+  follower: alan
+  followed: michael
+
+two:
+  follower: alan
+  followed: rhode
+
+three:
+  follower: michael
+  followed: alan
+
+four:
+  follower: divitia
+  followed: alan
+

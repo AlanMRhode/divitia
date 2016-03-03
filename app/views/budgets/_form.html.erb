@@ -1,0 +1,33 @@
+<%= form_for(@budget) do |f| %>
+  <% if @budget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
+
+      <ul>
+      <% @budget.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Net_Income %><br>
+    <%= f.text_field :Net_Income %>
+  </div>
+  <div class="field">
+    <%= f.label :Net_Expense %><br>
+    <%= f.text_field :Net_Expense %>
+  </div>
+  <div class="field">
+    <%= f.label :income_id %><br>
+    <%= f.text_field :income_id %>
+  </div>
+  <div class="field">
+    <%= f.label :expense_id %><br>
+    <%= f.text_field :expense_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <div class="text-center">
+    <section class="user_info">
+      <%= image_tag @user.avatar.url(:medium) %>
+      <h2><b><%= link_to @user.name, @user %></b></h2>
+      <h2>I have shared <%= @user.microposts.count %> planning tips!</h2>
+      <%= render 'shared/stats' %>
+    </section>
+    </div>
+  </aside>
+  <div class="col-md-8">
+    <div class="text-center"><h1><%= @title %></h1>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %></div>
+    <% end %>
+  </div>
+</div>

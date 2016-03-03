@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class= "jumbotron"> 
+  <h1>Monthly Incomes</h1>
+
+<div class="text-center">
+  <h2 class="btn btn-default"><%= link_to 'New Income', new_income_path %></h2>
+</div>
+
+<div class= "container">
+    <% @incomes.each do |income| %>
+          <h2><%= income.name %> | 
+          $ <%= income.value %><br><br>
+          <%= link_to 'Edit', edit_income_path(income) %> |
+          <%= link_to 'Delete', income, method: :delete, data: { confirm: 'Are you sure you want to delete this income?' } %></h2>
+    <% end %>
+</div>
+<br>
+</div>

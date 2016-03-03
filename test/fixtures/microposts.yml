@@ -1,0 +1,46 @@
+budget:
+  content: "I really need a budget!"
+  created_at: <%= 2.minutes.ago %>
+  user: alan
+
+rent:
+  content: "Wow, rent went up again this year!"
+  created_at: <%= 2.years.ago %>
+  user: alan
+
+debt:
+  content: "I am drowning in debt!"
+  created_at: <%= 2.hours.ago %>
+  user: alan
+
+most_recent:
+  content: "This is a short test"
+  created_at: <%= Time.zone.now %>
+  user: alan
+
+stocks:
+  content: "I'd like to buy stocks, but too much debt!"
+  created_at: <%= 2.years.ago %>
+  user: michael
+
+bonds:
+  content: "Buy bonds or pay school loans?"
+  created_at: <%= 3.days.ago %>
+  user: rhode
+
+etfs:
+  content: "What are ETFs? And can I buy them with my extra cash?"
+  created_at: <%= 10.minutes.ago %>
+  user: divitia
+
+funds:
+  content: "I need more reserve funds!"
+  created_at: <%= 4.hours.ago %>
+  user: divitia
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 11.days.ago %>
+  user: alan
+<% end %>

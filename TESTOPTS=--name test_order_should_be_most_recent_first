@@ -1,0 +1,19 @@
+Run options: --seed 2286
+
+# Running:
+
+...F.
+
+Finished in 0.357613s, 13.9816 runs/s, 13.9816 assertions/s.
+
+  1) Failure:
+MicropostTest#test_order_should_be_most_recent_first [/Users/AlanMichaelRhode/Desktop/divitia/test/models/micropost_test.rb:30]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-#<Micropost id: 941832919, content: "This is a short test", user_id: nil, created_at: "2016-02-17 20:13:45", updated_at: "2016-02-17 20:13:45">
++#<Micropost id: 41438668, content: "Wow, rent went up again this year!", user_id: nil, created_at: "2014-02-17 20:13:45", updated_at: "2016-02-17 20:13:45">
+
+
+5 runs, 5 assertions, 1 failures, 0 errors, 0 skips
+]2;[Minitest results] 5 tests

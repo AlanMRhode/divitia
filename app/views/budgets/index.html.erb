@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+  <div class= "jumbotron">
+    <h1>Current Budget</h1>
+  <div class= "col-md-6">
+  <div class= "total_budget">
+    <h2 class="budget">Incomes</h2>
+      <% @incomes.each do |income| %>
+          <h2><%= income.name %> | 
+          $ <%= income.value %></h2>
+      <% end %>
+  </div>
+  </div>
+    <div class="col-md-6">
+    <div class= "total_budget">
+    <h2 class="budget">Expenses</h2>
+      <% @expenses.each do |expense| %>
+         <h2><%= expense.name %> | 
+          $<%= expense.value %></h2>
+      <% end %>
+  </div>
+  </div>
+</div>

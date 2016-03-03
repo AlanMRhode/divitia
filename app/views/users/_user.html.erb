@@ -1,0 +1,8 @@
+<div class="we_plan">
+<%= image_tag user.avatar.url(:medium) %><br>
+<h2><%= link_to user.name, user %>
+<% if current_user.admin? && !current_user?(user) %><br>
+    	<%= link_to "delete", user, 	method: :delete,
+                                  		data: { confirm: "Are You Sure?" } %></h2>
+<% end %>
+</div>
