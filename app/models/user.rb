@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
-  before_create :create_activation_digest
+  before_create :create_activation_digest, :activation_true
 	
   validates :name, presence: true, length: { maximum: 50 }
   	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -26,6 +26,11 @@ class User < ActiveRecord::Base
     default_url: "missing.png"
   	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+
+  def activation_true
+    self.activated = true
+  end
+  
 	def User.digest(string)
     	cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
         											  BCrypt::Engine.cost
