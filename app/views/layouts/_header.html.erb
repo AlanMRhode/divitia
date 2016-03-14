@@ -7,23 +7,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Divitia Financial Planning Assistant", root_path, class: "navbar-brand" %>
+      <%= link_to "Divitia", root_path, class: "navbar-brand" %>
   </div>
     <nav>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Help", help_path %></li>
         <li><%= link_to "Contact", contact_path %></li>
         <% if logged_in? %>
           <li><%= link_to "We Plan", users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
+              My Plan<b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Balance Sheet", "/balance_sheets" %></li>
-              <li><%= link_to "Assets", "/assets" %></li>
+              <li><%= link_to "Assets", "/user_assets" %></li>
               <li><%= link_to "Liablities", "/liabilities" %></li>
               <li><%= link_to "Budget", "/budgets" %></li>
               <li><%= link_to "Incomes", "/incomes" %></li>

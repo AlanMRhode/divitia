@@ -5,7 +5,7 @@ class BalanceSheetsController < ApplicationController
   # GET /balance_sheets
   # GET /balance_sheets.json
   def index
-    @assets = Asset.where(:user_id => current_user.id)
+    @assets = UserAsset.where(:user_id => current_user.id)
     @liabilities = Liability.where(:user_id => current_user.id)
   end
 

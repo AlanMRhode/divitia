@@ -1,8 +1,7 @@
-<div class="panel panel-default">
-	<div class="panel-heading"><h1><%= link_to user.name, user %></h1>
+<div class="col-md">
+<h3><%= link_to user.name, user %></h3>
 	<%= image_tag user.avatar.url(:medium) %>
 	<% if current_user.admin? && !current_user?(user) %>
     <%= link_to "delete", user, method: :delete, data: { confirm: "Are You Sure?" } %>
-	</div>
-<% end %>
 </div>
+<% end %>

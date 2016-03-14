@@ -1,17 +1,19 @@
 <% provide(:title, @user.name) %>
+<div class="jumbotron">
+<div class="text-center"><h1>Profile</h1></div>
   <aside class="col-md">
     <div class="text-center">
     <section class="user_info">
       <%= image_tag @user.avatar.url(:medium) %>
       <h3><b><%= link_to @user.name, @user %></b></h3>
-      <h3>I have shared <%= @user.microposts.count %> planning tips!</h3>
+      <%= render 'follow_form' if logged_in? %>
+      <h3>I have shared <%= @user.microposts.count %> planning tip(s)!</h3>
       <%= render 'shared/stats' %>
     </section>
     </div>
   </aside>
 <div class="col-md">
   <div class="text-center">
-    <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
       <ol class="microposts">
         <%= render @microposts %>
@@ -19,4 +21,5 @@
       <%= will_paginate @microposts %>
     <% end %>
   </div>
+</div>
 </div>

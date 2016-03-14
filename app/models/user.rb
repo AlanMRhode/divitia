@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :balance_sheets, dependent: :destroy
-  has_many :assets, dependent: :destroy
+  has_many :user_assets, dependent: :destroy
   has_many :liabilities, dependent: :destroy
   has_many :budgets, dependent: :destroy
   has_many :incomes, dependent: :destroy

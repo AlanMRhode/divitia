@@ -1,9 +1,10 @@
 <% provide(:title, 'We Plan') %>
-<div class="center jumbotron"><h1>We Plan</h1></div>
-<div class="text-center">
-<ul class="users">
-  <%= render @users %>
-</ul>
+<div class="jumbotron">
+<div class="text-center"><h1>We Plan</h1></div>
+	<div class="text-center">
+		<div class="users">
+ 			 <%= render @users %>
+		</div>
 <%= will_paginate %>
 </div>
-
+</div>

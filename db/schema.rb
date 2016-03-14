@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313204024) do
-
-  create_table "assets", force: :cascade do |t|
-    t.string   "name"
-    t.decimal  "value"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20160314010209) do
 
   create_table "balance_sheets", force: :cascade do |t|
     t.decimal  "net_assets"
@@ -91,6 +83,14 @@ ActiveRecord::Schema.define(version: 20160313204024) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "user_assets", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "value"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

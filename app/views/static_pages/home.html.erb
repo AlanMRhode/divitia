@@ -1,6 +1,7 @@
 <% if logged_in? %>
-  <div class="center jumbotron"><h1>We Plan</h1></div>
-    <div class="border col-md">
+  <div class="jumbotron">
+  <div class="text-center"><h1>Planning Tips</h1></div>
+    <div class="col-md">
         <%= render 'shared/micropost_form' %>
       <%= render 'shared/feed' %>
     </div>
@@ -14,3 +15,4 @@
 </div>
 </div>
 <% end %>
+
