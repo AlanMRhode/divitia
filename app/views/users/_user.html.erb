@@ -1,4 +1,4 @@
-<div class="col-md">
+<div class="col-sm">
 <h3><%= link_to user.name, user %></h3>
 	<%= image_tag user.avatar.url(:medium) %>
 	<% if current_user.admin? && !current_user?(user) %>
