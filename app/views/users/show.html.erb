@@ -1,18 +1,18 @@
 <% provide(:title, @user.name) %>
-  <aside class="col-md-4">
+  <aside class="col-md">
     <div class="text-center">
     <section class="user_info">
       <%= image_tag @user.avatar.url(:medium) %>
-      <h2><b><%= link_to @user.name, @user %></b></h2>
-      <h2>I have shared <%= @user.microposts.count %> planning tips!</h2>
+      <h3><b><%= link_to @user.name, @user %></b></h3>
+      <h3>I have shared <%= @user.microposts.count %> planning tips!</h3>
       <%= render 'shared/stats' %>
     </section>
     </div>
   </aside>
-  <div class="col-md-8">
+<div class="col-md">
+  <div class="text-center">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
-      <h3>My <%= @user.microposts.count %> Planning Tips</h3>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>

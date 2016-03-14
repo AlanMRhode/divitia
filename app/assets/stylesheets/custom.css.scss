@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+
 }
 
 section {
@@ -59,7 +59,7 @@ p {
   color: #1282C3;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 15px;
+  padding-top: 10px;
   font-weight: bold;
 }
 
@@ -71,58 +71,10 @@ navbar-inverse {
   color: #1282C3;
 }
 
-/* footer */
-
-navbar-fixed-bottom  {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #1282C3;
-}
-
-footer a {
-  color: #1282C3;
-}
-
-footer a:hover {
-  color: #1282C3;
-  text-decoration: none;
-}
-
-footer small {
-  float: left;
-  margin-left: 5%;
-  margin-top: 1%;
-  color: #1282C3;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-  margin-right: 5%;
-  margin-top: 1%;
-  color: #1282C3;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-  color: #1282C3;
-}
-
-footer {
-    color: #1282C3;
-    background: black;
-}
-
-.divitia_logo {
-  width: 10%;
-}
-
 .jumbotron {
   background: white;
   top: 50%;
-  transform:translateY(-10%);
+
 }
 
 /* mixins, variables, etc. */
@@ -173,8 +125,6 @@ aside {
     }
   }
 }
-
-
 
 .user_avatars {
   overflow: auto;
@@ -318,6 +268,11 @@ span.picture {
 a.contact_me {
   color: #1282C3;
 }
+
+a.navbar-brand {
+
+}
+
 
 
 

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class= "jumbotron"> 
+  <h1>Liabilities</h1>
+  <div class= "total_budget">
+    <div class="text-center">
+      <h2><%= link_to 'New Liability', new_liability_path %></h2>
+    </div>
+
+  <div class= "col-md">
+    <% @liabilities.each do |liability| %>
+          <h2><%= liability.name %> | 
+          $ <%= liability.value %><br><br>
+          <%= link_to 'Edit', edit_liability_path(liability) %> |
+          <%= link_to 'Delete', liability, method: :delete, data: { confirm: 'Are you sure you want to delete this liability?' } %></h2>
+    <% end %>
+  </div>
+</div>
+<br>
+</div>
+

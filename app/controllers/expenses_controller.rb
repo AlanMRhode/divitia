@@ -1,10 +1,9 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
-  # GET /expenses
-  # GET /expenses.json
   def index
-    @expenses = Expense.all
+    @expenses = Expense.where(:user_id => current_user.id)
   end
 
   # GET /expenses/1
@@ -14,7 +13,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = Expense.new
+    @expense = current_user.expenses.build
   end
 
   # GET /expenses/1/edit
@@ -24,30 +23,21 @@ class ExpensesController < ApplicationController
   # POST /expenses
   # POST /expenses.json
   def create
-    @expense = Expense.new(expense_params)
-
-    respond_to do |format|
-      if @expense.save
-        format.html { redirect_to expenses_url, notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
-      else
-        format.html { render :new }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
+    @expense = current_user.expenses.build(expense_params)
+    if @expense.save
+      redirect_to expenses_url, notice: 'Expense was successfully created!'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /expenses/1
   # PATCH/PUT /expenses/1.json
   def update
-    respond_to do |format|
-      if @expense.update(expense_params)
-        format.html { redirect_to expenses_url, notice: 'Expense was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
-      else
-        format.html { render :edit }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
+    if @expense.update(expense_params)
+      redirect_to expenses_url, notice: 'Expense was successfully updated!'
+    else
+      render action: 'edit'
     end
   end
 
@@ -55,10 +45,7 @@ class ExpensesController < ApplicationController
   # DELETE /expenses/1.json
   def destroy
     @expense.destroy
-    respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to expenses_url
   end
 
   private
@@ -70,5 +57,10 @@ class ExpensesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
       params.require(:expense).permit(:name, :value, :user_id)
+    end
+
+    def correct_user
+      @expense = current_user.expenses.find_by(id: params[:id])
+      redirect_to expenses_path, notice: "Not authorized to edit this expense!" if @expense.nil?
     end
 end

@@ -2,12 +2,12 @@
 
 <div class= "jumbotron">
   <h1>Monthly Expenses</h1>
-
+  <div class= "total_budget">
 <div class= "text-center">
-  <h2 class= "btn btn-default"><%= link_to 'New Expense', new_expense_path %></h2>
+  <h2><%= link_to 'New Expense', new_expense_path %></h2>
 </div>
 
-<div class= "container">
+<div class= "col-md">
     <% @expenses.each do |expense| %>
        <h2><%= expense.name %> | 
         $<%= expense.value %><br><br>
@@ -15,7 +15,8 @@
         <%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure you want to delete this expense?' } %></h2>
     <% end %>
 </div>
+</div>
 
-<br>
+
 
 </div>

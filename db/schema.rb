@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302190608) do
+ActiveRecord::Schema.define(version: 20160313204024) do
+
+  create_table "assets", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "value"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "balance_sheets", force: :cascade do |t|
+    t.decimal  "net_assets"
+    t.decimal  "net_liabilities"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "budgets", force: :cascade do |t|
     t.decimal  "Net_Income"
@@ -20,10 +35,12 @@ ActiveRecord::Schema.define(version: 20160302190608) do
     t.integer  "expense_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
   add_index "budgets", ["expense_id"], name: "index_budgets_on_expense_id"
   add_index "budgets", ["income_id"], name: "index_budgets_on_income_id"
+  add_index "budgets", ["user_id"], name: "index_budgets_on_user_id"
 
   create_table "expenses", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +61,14 @@ ActiveRecord::Schema.define(version: 20160302190608) do
   end
 
   add_index "incomes", ["user_id"], name: "index_incomes_on_user_id"
+
+  create_table "liabilities", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "value"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"

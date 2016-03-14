@@ -1,8 +1,8 @@
-<div class="we_plan">
-<%= image_tag user.avatar.url(:medium) %><br>
-<h2><%= link_to user.name, user %>
-<% if current_user.admin? && !current_user?(user) %><br>
-    	<%= link_to "delete", user, 	method: :delete,
-                                  		data: { confirm: "Are You Sure?" } %></h2>
+<div class="panel panel-default">
+	<div class="panel-heading"><h1><%= link_to user.name, user %></h1>
+	<%= image_tag user.avatar.url(:medium) %>
+	<% if current_user.admin? && !current_user?(user) %>
+    <%= link_to "delete", user, method: :delete, data: { confirm: "Are You Sure?" } %>
+	</div>
 <% end %>
 </div>

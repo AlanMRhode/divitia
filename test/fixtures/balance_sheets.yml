@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  net_assets: 9.99
+  net_liabilities: 9.99
+
+two:
+  net_assets: 9.99
+  net_liabilities: 9.99

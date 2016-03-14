@@ -1,7 +1,9 @@
 <% provide(:title, "Log in") %>
+<div class="jumbotron">
+
 <h1>Log In</h1>
 
-<div class="row">
+<div class="col-md">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
@@ -20,6 +22,9 @@
       <%= f.submit "Log In", class: "btn btn-primary" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign Up Now!", signup_path %></p>
+    <div class="text-center">
+    <br><p>Or are you a new user? <%= link_to "Sign Up Now!", signup_path %></p>
+    </div>
   </div>
+</div>
 </div>

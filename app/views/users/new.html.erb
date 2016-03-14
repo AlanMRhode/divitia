@@ -1,7 +1,8 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'Sign Up') %>
+<div class="jumbotron">
 <h1>Sign Up</h1>
 
-<div class="row">
+<div class="col-md">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
@@ -23,5 +24,9 @@
 
       <%= f.submit "Create My Account", class: "btn btn-primary" %>
     <% end %>
+    <div class="text-center">
+    <br><p>Or are do you have an account? <%= link_to "Login Now!", login_path %></p>
+    </div>
   </div>
+</div>
 </div>

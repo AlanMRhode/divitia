@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Net assets:</strong>
+  <%= @balance_sheet.net_assets %>
+</p>
+
+<p>
+  <strong>Net liabilities:</strong>
+  <%= @balance_sheet.net_liabilities %>
+</p>
+
+<%= link_to 'Edit', edit_balance_sheet_path(@balance_sheet) %> |
+<%= link_to 'Back', balance_sheets_path %>

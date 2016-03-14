@@ -1,10 +1,20 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container">
-    <%= link_to "Divitia", root_path, id: "logo" %>
+  <div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Divitia Financial Planning Assistant", root_path, class: "navbar-brand" %>
+  </div>
     <nav>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
         <% if logged_in? %>
           <li><%= link_to "We Plan", users_path %></li>
           <li class="dropdown">
@@ -12,6 +22,9 @@
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <li><%= link_to "Balance Sheet", "/balance_sheets" %></li>
+              <li><%= link_to "Assets", "/assets" %></li>
+              <li><%= link_to "Liablities", "/liabilities" %></li>
               <li><%= link_to "Budget", "/budgets" %></li>
               <li><%= link_to "Incomes", "/incomes" %></li>
               <li><%= link_to "Expenses", "/expenses" %></li>
@@ -27,4 +40,4 @@
       </ul>
     </nav>
   </div>
-</header>
+</nav>
