@@ -1,12 +1,12 @@
 <% provide(:title, @user.name) %>
 <div class="jumbotron">
-<div class="text-center"><h1>Profile</h1></div>
+<div class="text-center">
+<h1><%= @user.name %>'s Profile</h1></div>
   <aside class="col-md">
     <div class="text-center">
     <section class="user_info">
+      <%= render 'follow_form' if logged_in? %><br><br>
       <%= image_tag @user.avatar.url(:medium) %>
-      <h3><b><%= link_to @user.name, @user %></b></h3>
-      <%= render 'follow_form' if logged_in? %>
       <h3>I have shared <%= @user.microposts.count %> planning tip(s)!</h3>
       <%= render 'shared/stats' %>
     </section>

@@ -9,7 +9,7 @@
 
 <div class= "col-md">
     <% @expenses.each do |expense| %>
-       <h2><%= expense.name %> | 
+       <h2><%= expense.name %><br><br>
         $<%= expense.value %><br><br>
         <%= link_to 'Edit', edit_expense_path(expense) %> | 
         <%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure you want to delete this expense?' } %></h2>

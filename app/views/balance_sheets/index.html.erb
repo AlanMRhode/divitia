@@ -6,7 +6,7 @@
   <div class= "total_budget">
     <h2 class="budget">Assets</h2>
       <% @assets.each do |asset| %>
-          <h2><%= asset.name %> | 
+          <h2><%= asset.name %><br><br>
           $ <%= asset.value %></h2>
       <% end %>
   </div>
@@ -15,7 +15,7 @@
     <div class= "total_budget">
     <h2 class="budget">Liabilities</h2>
       <% @liabilities.each do |liability| %>
-         <h2><%= liability.name %> | 
+         <h2><%= liability.name %><br><br>
           $<%= liability.value %></h2>
       <% end %>
   </div>

@@ -9,7 +9,7 @@
 
   <div class= "col-md">
     <% @assets.each do |asset| %>
-          <h2><%= asset.name %> | 
+          <h2><%= asset.name %><br><br>
           $ <%= asset.value %><br><br>
           <%= link_to 'Edit', edit_user_asset_path(asset) %> |
           <%= link_to 'Delete', asset, method: :delete, data: { confirm: 'Are you sure you want to delete this asset?' } %></h2>
